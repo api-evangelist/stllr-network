@@ -1,11 +1,11 @@
-generated: '2026-07-21'
+generated: '2026-08-12'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
-- host: stllr.network
+- host: www.stllr.network
   https: true
   tls_version: TLSv1.3
-  cert_expires: Oct 15 12:33:05 2026 GMT
+  cert_expires: Oct 15 20:54:50 2026 GMT
   hsts: true
   hsts_max_age: 31536000
 domains:

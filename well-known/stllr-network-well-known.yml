@@ -1,0 +1,111 @@
+generated: '2026-08-12'
+method: probed
+source: live HTTP probes of every Stllr Network host found in apis.yml, in the site
+  markup, and in the app.stllr.network JavaScript bundle
+note: >-
+  Every /.well-known/ path probed on every Stllr Network host returned a miss. No
+  security.txt, no OpenID/OAuth discovery document, no api-catalog, no
+  ai-plugin.json and no A2A agent card is served anywhere on stllr.network or its
+  subdomains. Recorded as a documented absence: NO WellKnown and NO SecurityTxt
+  pointer is emitted in apis.yml, because either pointer would assert that the
+  provider serves that surface.
+  Two real documents WERE found on the marketing host and are captured: a
+  first-party llms.txt (saved verbatim to llms/stllr-network-llms.txt) and a
+  robots.txt that explicitly allows the named AI crawlers.
+  One host, it.stllr.network, answers HTTP 200 with the same 1,360-byte HTML shell
+  for EVERY path including all /.well-known/* paths — a Vite single-page-app
+  catch-all ("Stllr It", built on Replit, still carrying the unedited default meta
+  description). Every 200 on that host is a MISS, not a document, and no agent card
+  was recorded from it.
+hosts:
+- host: https://www.stllr.network
+  note: Webflow-hosted marketing site. Returns a clean 404 body ("Invalid .well-known
+    request") for every /.well-known/* path, so these are trustworthy misses.
+  documents:
+  - {path: /.well-known/security.txt, status: 404, content_type: 'text/html; charset=utf-8'}
+  - {path: /.well-known/openid-configuration, status: 404, content_type: 'text/html; charset=utf-8'}
+  - {path: /.well-known/oauth-authorization-server, status: 404, content_type: 'text/html; charset=utf-8'}
+  - {path: /.well-known/api-catalog, status: 404, content_type: 'text/html; charset=utf-8'}
+  - {path: /.well-known/ai-plugin.json, status: 404, content_type: 'text/html; charset=utf-8'}
+  - {path: /.well-known/agent-card.json, status: 404, content_type: 'text/html; charset=utf-8'}
+  - {path: /.well-known/agent.json, status: 404, content_type: 'text/html; charset=utf-8'}
+  - {path: /llms.txt, status: 200, content_type: 'text/plain; charset=utf-8', bytes: 1257,
+     file: ../llms/stllr-network-llms.txt, note: 'real first-party llms.txt, saved verbatim'}
+  - {path: /llms-full.txt, status: 404, note: 'no full-text variant published'}
+  - {path: /robots.txt, status: 200, content_type: 'text/plain; charset=utf-8', bytes: 348,
+     note: 'Allow: / for OAI-SearchBot, ChatGPT-User, PerplexityBot, Claude-SearchBot, ClaudeBot and Google-Extended'}
+  - {path: /sitemap.xml, status: 200, content_type: application/rss+xml, bytes: 37172}
+- host: https://api.stllr.network
+  note: >-
+    Live first-party API host — the backend the Next.js web app at app.stllr.network
+    calls. Returns a uniform JSON 404 ({"status":false,"message":"Not Found"}) for
+    every unknown path, so these are trustworthy misses, not a catch-all.
+  documents:
+  - {path: /.well-known/security.txt, status: 404, content_type: 'application/json; charset=utf-8'}
+  - {path: /.well-known/openid-configuration, status: 404, content_type: 'application/json; charset=utf-8'}
+  - {path: /.well-known/oauth-authorization-server, status: 404, content_type: 'application/json; charset=utf-8'}
+  - {path: /.well-known/api-catalog, status: 404, content_type: 'application/json; charset=utf-8'}
+  - {path: /.well-known/ai-plugin.json, status: 404, content_type: 'application/json; charset=utf-8'}
+  - {path: /.well-known/agent-card.json, status: 404, content_type: 'application/json; charset=utf-8'}
+  - {path: /.well-known/agent.json, status: 404, content_type: 'application/json; charset=utf-8'}
+  - {path: /llms.txt, status: 404}
+  - {path: /robots.txt, status: 404}
+- host: https://app.stllr.network
+  note: Next.js customer/creator workspace behind a login. Returns a real Next.js 404
+    page (distinct byte sizes per path), so these are trustworthy misses.
+  documents:
+  - {path: /.well-known/security.txt, status: 404, content_type: 'text/html; charset=utf-8'}
+  - {path: /.well-known/openid-configuration, status: 404, content_type: 'text/html; charset=utf-8'}
+  - {path: /.well-known/oauth-authorization-server, status: 404, content_type: 'text/html; charset=utf-8'}
+  - {path: /.well-known/api-catalog, status: 404, content_type: 'text/html; charset=utf-8'}
+  - {path: /.well-known/ai-plugin.json, status: 404, content_type: 'text/html; charset=utf-8'}
+  - {path: /.well-known/agent-card.json, status: 404, content_type: 'text/html; charset=utf-8'}
+  - {path: /.well-known/agent.json, status: 404, content_type: 'text/html; charset=utf-8'}
+  - {path: /llms.txt, status: 404}
+  - {path: /robots.txt, status: 404}
+- host: https://it.stllr.network
+  note: >-
+    "Stllr It" — a small Vite/React single-page app built on Replit, still serving the
+    unedited default meta description. Answers HTTP 200 with an identical 1,360-byte
+    HTML shell for EVERY path probed, including /.well-known/agent-card.json and
+    /.well-known/agent.json. SPA catch-all: every 200 here is a miss.
+  documents:
+  - {path: /.well-known/agent-card.json, status: 200, result: html-shell-not-a-document}
+  - {path: /.well-known/agent.json, status: 200, result: html-shell-not-a-document}
+  - {path: /.well-known/security.txt, status: 200, result: html-shell-not-a-document}
+  - {path: /openapi.json, status: 200, result: html-shell-not-a-document}
+  - {path: /llms.txt, status: 200, result: html-shell-not-a-document}
+  - {path: /robots.txt, status: 200, content_type: 'text/plain; charset=utf-8', bytes: 23,
+     note: 'the one genuine text document on this host: "User-agent: * / Allow: /"'}
+hosts_not_resolving:
+- {host: docs.stllr.network, dns: NXDOMAIN}
+- {host: developer.stllr.network, dns: NXDOMAIN}
+- {host: developers.stllr.network, dns: NXDOMAIN}
+- {host: status.stllr.network, dns: NXDOMAIN}
+- {host: trust.stllr.network, dns: NXDOMAIN}
+- {host: et.stllr.network, dns: resolves, status: 404, note: 'referenced in the app bundle; serves a plain-text 404'}
+summary:
+  hosts_probed: 4
+  documents_found: 1
+  llms_txt_found: 1
+  agent_card_found: 0
+  security_txt_found: 0
+  openid_configuration_found: 0
+agent_posture:
+  finding: agent-friendly-marketing-surface-no-agent-api
+  detail: >-
+    Stllr Network has clearly done deliberate agent/LLM-discovery work on its
+    MARKETING surface — it publishes a hand-written llms.txt and a robots.txt that
+    names and explicitly allows OAI-SearchBot, ChatGPT-User, PerplexityBot,
+    Claude-SearchBot, ClaudeBot and Google-Extended. None of that reaches the product:
+    there is no agent card, no MCP endpoint, no /.well-known discovery document, and
+    no public API contract. The llms.txt itself says the product app is "not for SEO
+    indexing". An agent can read about Stllr; it cannot transact with Stllr.
+  evidence:
+  - {url: 'https://www.stllr.network/llms.txt', http_status: 200, bytes: 1257}
+  - {url: 'https://www.stllr.network/robots.txt', http_status: 200, bytes: 348}
+  - {url: 'https://www.stllr.network/.well-known/agent-card.json', http_status: 404}
+  - {url: 'https://api.stllr.network/.well-known/agent-card.json', http_status: 404}
+x-evidence:
+  fetched: '2026-08-12'
+  probe_matrix: 4 hosts x 20 paths, plus DNS resolution checks on 6 further subdomains

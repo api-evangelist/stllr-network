@@ -1,0 +1,28 @@
+# Stllr Network
+
+> AI-powered creator and UGC network for brands and creators across the Arab world (MENA).
+
+Stllr Network connects brands with authentic UGC creators in Saudi Arabia, UAE, Egypt, and the wider Middle East. Products include PAYG video packages, Remix (AI ad variations), and Premier (managed creator campaigns).
+
+## Primary pages
+
+- [Home (AR)](https://www.stllr.network/): Arabic homepage
+- [Home (EN)](https://www.stllr.network/en): English homepage
+- [PAYG](https://www.stllr.network/payg): Pay-as-you-go UGC video packages
+- [Remix](https://www.stllr.network/remix): AI video ad variation tool
+- [Premier](https://www.stllr.network/premier): Managed creator campaigns
+- [Creator](https://www.stllr.network/creator): Join as a creator
+- [Catalog](https://www.stllr.network/catalog): Creator catalog
+- [Pricing](https://www.stllr.network/pricing): Pricing plans
+- [Agency](https://www.stllr.network/agency): Agency solutions
+- [Blog](https://www.stllr.network/blog): Guides and case studies
+- [Book a call](https://www.stllr.network/book-a-call): Sales contact
+
+## App
+
+- Product app: https://app.stllr.network (login / workspace — not for SEO indexing)
+
+## Contact
+
+- Website: https://www.stllr.network
+- App: https://app.stllr.network

@@ -1,0 +1,116 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.stllr.network/en/pricing
+docs: https://www.stllr.network/payg
+plan_count: 6
+currency: SAR
+note: >-
+  These are Stllr Network's PRODUCT plans — priced UGC video subscriptions and
+  pay-per-video bundles sold to brands. They are not API plans: Stllr publishes no
+  developer program, no API key tier, no request quota and no metered API price.
+  Every figure below is transcribed verbatim from the published pricing page
+  (prices are rendered as a number next to an SAR currency icon; the page carries
+  no other currency). "No Face" and "Shows Face" are Stllr's own product names for
+  whether the creator appears on camera. A `Plans` pointer IS emitted because the
+  provider genuinely publishes a self-serve rate card with real numbers.
+plans:
+- name: Starter
+  family: UGC Subscriptions
+  price: 2070
+  currency: SAR
+  billing_period: month
+  included: 5 No Face videos
+  included_quota: {videos: 5, video_type: no-face}
+  features: [Chat support, Account management]
+  bonus: 1 free No Face video for every 3-month subscription
+  cta: Order Now
+  self_serve: true
+- name: Growth
+  family: UGC Subscriptions
+  price: 4005
+  currency: SAR
+  billing_period: month
+  included: 5 Shows Face videos
+  included_quota: {videos: 5, video_type: shows-face}
+  features: [Chat support, Account management]
+  bonus: 1 free Shows Face video for every 3-month subscription
+  cta: Order Now
+  self_serve: true
+- name: Pro
+  family: UGC Subscriptions
+  price: 8010
+  currency: SAR
+  billing_period: month
+  included: 10 Shows Face videos
+  included_quota: {videos: 10, video_type: shows-face}
+  features: [Chat support, Account management]
+  bonus: 1 free No Face + 1 Shows Face video for every 3-month subscription
+  cta: Order Now
+  self_serve: true
+- name: UGC Enterprise
+  family: UGC Subscriptions
+  price: null
+  currency: SAR
+  billing_period: null
+  status: Coming Soon
+  included: Unlimited videos
+  features: [Chat support, Account management, Nano influencers, Unlimited videos]
+  description: Get a streamline of curated videos inside your e-commerce app.
+  cta: Book a Call
+  self_serve: false
+- name: No Face (pay per video)
+  family: UGC Market / Pay per video
+  price: 420
+  currency: SAR
+  billing_period: per-video
+  bundle_price: 3990
+  bundle_size: 10
+  description: Perfect for faceless videos by young content creators.
+  constraints: [Female creators only]
+  features: [Get creators picked for you, Chat support, 48 hours free edits, Creator
+      shipping address]
+  cta: Order Now
+  self_serve: true
+- name: Shows Face (pay per video)
+  family: UGC Market / Pay per video
+  price: 815
+  currency: SAR
+  billing_period: per-video
+  bundle_price: 7742
+  bundle_size: 10
+  badge: Most Popular
+  description: Arrange videos with more control over the creator's gender.
+  features: [Choose gender, Get creators picked for you, Chat support, 48 hours free
+      edits, Creator shipping address, Face appearance, Age range selection, Custom
+      creator selection, Outdoor/indoor shooting]
+  cta: Order Now
+  self_serve: true
+add_ons:
+- name: Edit Script
+  price: null
+  description: Change the script after the creator has started shooting, with one click.
+- name: Add Hooks/Variants
+  price: null
+  description: Request more hooks or video variations with one click.
+- name: Raw Footage
+  price: null
+  description: Upgrade Basic and Sponsored videos to Custom to receive the raw footage
+    files.
+- name: Nano-Influencer affiliate program
+  price: null
+  description: Increase brand mentions organically or via Spark Ads; priced through
+    a call.
+api_plans:
+  published: false
+  note: >-
+    No API tier, no developer plan, no per-request pricing and no rate-limited free
+    tier is published anywhere on the site. The word "API" does not appear on the
+    homepage, pricing page, PAYG page, Premier page, Remix page, Agency page or the
+    terms and conditions.
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - {url: 'https://www.stllr.network/en/pricing', http_status: 200, note: 'full published rate card, prices with SAR currency icon'}
+  - {url: 'https://www.stllr.network/pricing', http_status: 200, note: 'Arabic equivalent'}
+  - {url: 'https://www.stllr.network/payg', http_status: 200}
+  - {url: 'https://www.stllr.network/en', http_status: 200, note: 'zero occurrences of the string "api" in rendered page text'}

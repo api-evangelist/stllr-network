@@ -1,0 +1,36 @@
+generated: '2026-08-12'
+method: probed
+source: live probes of https://api.stllr.network plus a full-text search of the public
+  site for rate/quota/limit language
+limit_count: 0
+note: >-
+  Stllr Network publishes no rate limits, because it publishes no API documentation
+  at all. There is a real first-party API host — api.stllr.network, the backend the
+  Next.js app at app.stllr.network calls — and it does serve live routes under /v1/,
+  but nothing about it is documented: no quota, no window, no burst allowance, no
+  exhaustion status code and no reference page. Nothing could be observed at runtime
+  either: the two unauthenticated routes that answer (both are OAuth hand-offs) return
+  302 with no RateLimit-*, X-RateLimit-* or Retry-After header on the response.
+  Honest zero; NO RateLimits pointer is emitted, because emitting one would credit the
+  provider with a runtime signal an agent cannot actually read.
+limits: []
+response_headers: []
+exhaustion_status: null
+observed_security_headers:
+- strict-transport-security
+- content-security-policy
+- x-content-type-options
+- x-frame-options
+- referrer-policy
+observed_note: >-
+  api.stllr.network returns a full Helmet-style security header set and
+  `access-control-allow-origin: *`, served behind Google Frontend — a well-configured
+  but entirely undocumented backend.
+x-evidence:
+  fetched: '2026-08-12'
+  probes:
+  - {url: 'https://api.stllr.network/', http_status: 404, note: 'uniform JSON 404 {"status":false,"message":"Not Found"}; no rate-limit headers'}
+  - {url: 'https://api.stllr.network/v1/google_login', http_status: 302, note: 'real route; no RateLimit-*/X-RateLimit-*/Retry-After header present'}
+  - {url: 'https://api.stllr.network/v1/tiktok/oauth', http_status: 302, note: 'real route, redirects to TikTok authorize; no rate-limit headers'}
+  - {url: 'https://api.stllr.network/openapi.json', http_status: 404}
+  - {url: 'https://www.stllr.network/en/pricing', http_status: 200, note: 'no quota, request or rate language anywhere on the rate card'}

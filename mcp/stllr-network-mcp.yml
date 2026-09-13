@@ -1,0 +1,31 @@
+generated: '2026-09-11'
+method: probed
+source: https://api.stllr.network/mcp
+status: published
+server:
+  name: stllr-network
+  transport: http
+  url: https://api.stllr.network/mcp
+deployment:
+  mode: remote
+  endpoint: https://api.stllr.network/mcp
+  verified: probed
+  probe: live
+  checked: '2026-09-11'
+  source: docs-check 2026-09-12 (endpoint found in the provider's own documentation, then probed)
+tools_count: 6
+tools:
+- name: fetch_countries
+  description: ''
+- name: fetch_currencies
+  description: ''
+- name: fetch_cities
+  description: ''
+- name: fetch_languages
+  description: ''
+- name: fetch_dialects
+  description: ''
+- name: fetch_niches
+  description: ''
+tools_source: live tools/list via initialize handshake, 2026-09-12 (signals/audit_mcp_authorship.py --probe)
+authorship: provider

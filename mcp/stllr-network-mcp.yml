@@ -16,16 +16,18 @@ deployment:
 tools_count: 6
 tools:
 - name: fetch_countries
-  description: ''
+  description: Fetch the list of all available countries
 - name: fetch_currencies
-  description: ''
+  description: Fetch the list of all available currencies
 - name: fetch_cities
-  description: ''
+  description: Fetch the list of cities for a given country
 - name: fetch_languages
-  description: ''
+  description: Fetch the list of all available languages
 - name: fetch_dialects
-  description: ''
+  description: Fetch the list of dialects for a given language
 - name: fetch_niches
-  description: ''
+  description: Fetch the list of all available niches (content categories)
 tools_source: live tools/list via initialize handshake, 2026-09-12 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
+descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
+  --descriptions, 2026-09-28

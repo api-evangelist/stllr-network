@@ -70,6 +70,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: RateLimits
+  url: rate-limits/stllr-network-rate-limits.yml
 - type: Website
   url: https://www.stllr.network
 - type: Pricing

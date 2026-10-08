@@ -114,3 +114,46 @@ x-evidence:
   - {url: 'https://www.stllr.network/pricing', http_status: 200, note: 'Arabic equivalent'}
   - {url: 'https://www.stllr.network/payg', http_status: 200}
   - {url: 'https://www.stllr.network/en', http_status: 200, note: 'zero occurrences of the string "api" in rendered page text'}
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - subscription
+  units: []
+  plans:
+  - name: Starter
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Growth
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Pro
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: UGC Enterprise
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: No Face (pay per video)
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Shows Face (pay per video)
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []

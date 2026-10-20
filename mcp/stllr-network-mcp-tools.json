@@ -1,0 +1,100 @@
+{
+  "endpoint": "https://api.stllr.network/mcp",
+  "captured": "2026-10-20",
+  "method": "initialize + tools/list (anonymous, no tool called; roadmap#992)",
+  "protocol_version": "2025-06-18",
+  "server_info": {
+    "name": "stllr-public",
+    "version": "1.0.0"
+  },
+  "result": {
+    "tools": [
+      {
+        "name": "fetch_countries",
+        "description": "Fetch the list of all available countries",
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "fetch_currencies",
+        "description": "Fetch the list of all available currencies",
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "fetch_cities",
+        "description": "Fetch the list of cities for a given country",
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "country_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "country_id"
+          ]
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "fetch_languages",
+        "description": "Fetch the list of all available languages",
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "fetch_dialects",
+        "description": "Fetch the list of dialects for a given language",
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "language_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "language_id"
+          ]
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "fetch_niches",
+        "description": "Fetch the list of all available niches (content categories)",
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      }
+    ]
+  }
+}
